@@ -19,7 +19,11 @@ pub fn search(q: &str) -> Result<Vec<MyVideo>, Box<dyn Error>> {
         .filter_map(|item| match item {
             SearchItem::Video {
                 title, id, length, ..
-            } => Some(MyVideo { title, id, length }),
+            } => Some(MyVideo {
+                title: title.trim().to_string(),
+                id,
+                length,
+            }),
             _ => None,
         })
         .collect();
