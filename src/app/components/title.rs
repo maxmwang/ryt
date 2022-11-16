@@ -1,7 +1,7 @@
 use cursive::view::Resizable;
 use cursive::views::{ResizedView, TextView};
 
-pub fn title_view() -> ResizedView<TextView> {
+pub fn title_component() -> ResizedView<TextView> {
     let title_text = (vec![
         r"         _    _        _        _       ",
         r"        /\ \ /\ \     /\_\     /\ \     ",

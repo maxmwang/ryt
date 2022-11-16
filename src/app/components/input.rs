@@ -2,12 +2,18 @@ use cursive::align::HAlign;
 use cursive::view::{Nameable, Resizable};
 use cursive::views::{Dialog, EditView};
 
-pub fn input_view() -> Dialog {
+use crate::app::api;
+use crate::app::views::results;
+
+pub fn input_component() -> Dialog {
     let input = EditView::new()
         .filler("█")
         .on_submit(|s, input| {
             s.pop_layer();
-            s.add_layer(Dialog::info(format!("You entered {}", input)));
+
+            let results = api::search(input).ok();
+
+            s.add_layer(results::results_view(results.unwrap()));
         })
         .with_name("input")
         .full_width();
