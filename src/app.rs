@@ -1,5 +1,3 @@
-use cursive;
-
 mod api;
 mod command;
 mod components;

@@ -1,4 +1,4 @@
-use cursive::align::HAlign;
+use cursive::align::HAlign::Left;
 use cursive::view::{Nameable, Resizable};
 use cursive::views::{Dialog, EditView};
 
@@ -18,9 +18,7 @@ pub fn input_component() -> Dialog {
         .with_name("input")
         .full_width();
 
-    let input_wrapper = Dialog::around(input)
+    Dialog::around(input)
         .title("Search of [h]elp")
-        .title_position(HAlign::Left);
-
-    input_wrapper
+        .title_position(Left)
 }

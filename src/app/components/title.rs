@@ -17,7 +17,5 @@ pub fn title_component() -> ResizedView<TextView> {
     ])
     .join("\n");
 
-    let title = TextView::new(title_text).center().full_screen();
-
-    title
+    TextView::new(title_text).center().full_screen()
 }
