@@ -1,11 +1,11 @@
 mod api;
-mod command;
 mod components;
 mod config;
+mod mpv;
 mod views;
 
 pub fn app() {
-    let mut siv = cursive::default();
+    let mut siv = cursive::crossterm();
 
     config::load_config(&mut siv);
 
