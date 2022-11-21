@@ -1,16 +1,9 @@
-use cursive::views::{Dialog, LinearLayout};
+use cursive::views::Dialog;
 
-use crate::app::api::MyVideo;
-use crate::app::components;
+use crate::app::{api::MyVideo, components::list::list_component, views::wrap::wrap_view};
+
+const TITLE: &str = "Results";
 
 pub fn results_view(lst: Vec<MyVideo>) -> Dialog {
-    let layout = Dialog::around(
-        LinearLayout::vertical()
-            .child(components::list::list_component(lst))
-            .child(components::input::input_component()),
-    )
-    .title("ryt")
-    .padding_lrtb(2, 2, 1, 1);
-
-    layout
+    wrap_view(list_component(lst), TITLE)
 }

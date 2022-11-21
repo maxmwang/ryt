@@ -1,14 +1,7 @@
-use cursive::views::{Dialog, LinearLayout};
+use cursive::views::Dialog;
 
-use crate::app::components;
+use crate::app::{components::title, views::wrap::wrap_view};
 
 pub fn home_view() -> Dialog {
-    let layout = Dialog::around(
-        LinearLayout::vertical()
-            .child(components::title::title_component())
-            .child(components::input::input_component()),
-    )
-    .padding_lrtb(2, 2, 1, 1);
-
-    layout
+    wrap_view(title::title_component(), "")
 }
