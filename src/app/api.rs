@@ -1,5 +1,4 @@
-use invidious::reqwest::blocking::Client;
-use invidious::structs::hidden::SearchItem;
+use invidious::{reqwest::blocking::Client, structs::hidden::SearchItem};
 use std::error::Error;
 
 pub struct MyVideo {
@@ -30,5 +29,3 @@ pub fn search(q: &str) -> Result<Vec<MyVideo>, Box<dyn Error>> {
 
     Ok(results)
 }
-
-// pub fn get_video(id: &str)
